@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.ico" />
+  <title>批量生成条形码</title>
+  <style>
+.barcode-wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.barcode-break {
+  /* 添加间距或样式以适应需求 */
+}
+
+.barcode-container {
+  flex: 0 0 calc(50% - 20px); /* 20px是每个容器的外边距和边框的总宽度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #87CEFA;
+}
+
+.barcode-item {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px;
+}
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">批量生成条形码</h1>
+  <form style="text-align:center;">
+    <label for="barcodeData">一行一个条形码的数据：</label>
+    <br>
+    <textarea id="barcodeData" rows="5" cols="30"></textarea>
+    <br>
+
+    
+    <button id="clearButton">清空内容</button>
+
+    <button type="button" onclick="generateBarcodes()">生成条形码</button>
+  </form>
+  <div class="barcode-wrapper"></div>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.3/dist/JsBarcode.all.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
